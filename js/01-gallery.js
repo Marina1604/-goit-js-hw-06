@@ -40,11 +40,15 @@ function onImageClick(e) {
 
     );
     instance.show();
-
-  // закриття
-  galleryEl.addEventListener('keydown', (e) => {
-    if (e.code === 'Escape') {
-      instance.close()
+    
+    galleryEl.addEventListener("keydown", onEscKeyPress);
+    
+    function onEscKeyPress(e) {
+        
+        if (e.code === 'Escape') {
+            instance.close();
+            galleryEl.removeEventListener("keydown", onEscKeyPress);
+        }
     }
-  })
+
 }

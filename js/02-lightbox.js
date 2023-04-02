@@ -18,4 +18,9 @@ const images = galleryItems
 
 galleryEl.insertAdjacentHTML('beforeend', images)
 
-var lightbox = new SimpleLightbox('.gallery a', { captionDelay: 250 })
+var lightbox = new SimpleLightbox('.gallery a', { 
+  captions: true,
+  captionsData: "alt",
+  captionPosition: "bottom",
+  captionDelay: 250,
+})
